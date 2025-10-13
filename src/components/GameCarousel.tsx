@@ -170,7 +170,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
         }}
       >
         {/* Left spacer for proper centering */}
-        <div className="flex-shrink-0 w-[calc(50vw-42.5vw)] lg:w-[calc(50vw-250px)]" />
+        <div className="flex-shrink-0 w-[calc(50vw-37.5vw)] lg:w-[calc(50vw-200px)]" />
         
         {infiniteGames.map((game, index) => {
           const actualIndex = getActualIndex(index);
@@ -178,11 +178,11 @@ export function GameCarousel({ games }: GameCarouselProps) {
             <div
               key={`${game.title}-${index}`}
               ref={(el) => { itemRefs.current[index] = el; }}
-              className={`flex-shrink-0 snap-center transition-all duration-500 ${
-                centerIndex === index
-                  ? 'w-[85vw] sm:w-[70vw] md:w-[60vw] lg:w-[500px] scale-100 opacity-100'
-                  : 'w-[85vw] sm:w-[70vw] md:w-[60vw] lg:w-[500px] scale-75 opacity-40'
-              }`}
+                  className={`flex-shrink-0 snap-center transition-all duration-500 ${
+                    centerIndex === index
+                      ? 'w-[75vw] sm:w-[60vw] md:w-[50vw] lg:w-[400px] scale-100 opacity-100'
+                      : 'w-[75vw] sm:w-[60vw] md:w-[50vw] lg:w-[400px] scale-75 opacity-40'
+                  }`}
             >
               <GameCard
                 title={game.title}
@@ -196,7 +196,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
         })}
         
         {/* Right spacer for proper centering */}
-        <div className="flex-shrink-0 w-[calc(50vw-42.5vw)] lg:w-[calc(50vw-250px)]" />
+        <div className="flex-shrink-0 w-[calc(50vw-37.5vw)] lg:w-[calc(50vw-200px)]" />
       </div>
 
       {/* Indicator Dots */}
