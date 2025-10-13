@@ -10,23 +10,23 @@ export default function Home() {
     {
       title: "BORDERLAND",
       status: "Live Now",
-      image: "https://images.unsplash.com/photo-1571619243106-f5d5334abd9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwbGF5aW5nJTIwY2FyZHMlMjBteXN0ZXJ5fGVufDF8fHx8MTc2MDM4NjcwOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/images/Borderland.png",
       link: "https://borderland.thebeaconhq.com"
     },
     {
       title: "SQUID GAME",
       status: "LOCKED",
-      image: "https://images.unsplash.com/photo-1610296669228-602fa827fc1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWQlMjBsaWdodCUyMGdhbWV8ZW58MXx8fHwxNzYwMzg2NzA4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "/images/SquidGame.png"
     },
     {
       title: "SURVIVOR",
       status: "LOCKED",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGlzbGFuZCUyMGJlYWNofGVufDF8fHx8MTc2MDM4NjcwOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "/images/Survivor.png"
     },
     {
       title: "AMAZING RACE",
       status: "LOCKED",
-      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXR5JTIwcmFjZSUyMGNoZWNrcG9pbnR8ZW58MXx8fHwxNzYwMzg2NzA4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "/images/AmazingRace.png"
     }
   ];
   
