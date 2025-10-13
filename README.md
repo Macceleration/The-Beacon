@@ -7,16 +7,12 @@ A simple webapp that displays "The Beacon".
 First, install the dependencies:
 
 ```bash
-npm install
-# or
 yarn install
 ```
 
 Then, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
@@ -31,7 +27,12 @@ This project is configured for deployment on Vercel. Simply push to the main bra
 To create a production build:
 
 ```bash
-npm run build
-# or
 yarn build
 ```
+
+## Available Scripts
+
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn start` - Start production server
+- `yarn lint` - Run ESLint
