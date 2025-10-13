@@ -43,7 +43,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
           isComingSoon 
             ? 'bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700' 
             : 'bg-gradient-to-r from-primary via-accent to-secondary'
-        } p-4 border-b-4 ${isComingSoon ? 'border-zinc-700' : 'border-primary'}`}>
+        } p-3 border-b-4 ${isComingSoon ? 'border-zinc-700' : 'border-primary'}`}>
           {/* Marquee lights */}
           <div className="absolute top-0 left-0 right-0 flex justify-around py-1">
             {[...Array(8)].map((_, i) => (
@@ -98,7 +98,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         </div>
 
         {/* Screen Area */}
-        <div className="p-6 bg-black">
+        <div className="p-4 bg-black">
           <div className="relative border-8 border-zinc-900 shadow-2xl shadow-black/50 overflow-hidden"
             style={{
               boxShadow: 'inset 0 0 30px rgba(0,0,0,0.8)',
@@ -134,7 +134,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         </div>
 
         {/* Control Panel */}
-        <div className="relative bg-gradient-to-b from-zinc-800 to-black border-t-4 border-zinc-700 p-4">
+        <div className="relative bg-gradient-to-b from-zinc-800 to-black border-t-4 border-zinc-700 p-3">
           {/* Control Panel Angle */}
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-700/20 to-transparent pointer-events-none" />
           
