@@ -191,7 +191,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
                   PLAY
                 </a>
               ) : (
-                <div className="arcade-font text-[0.5rem] px-3 py-1 bg-zinc-700 text-zinc-400 rounded border border-zinc-600">
+                <div className="arcade-font text-[0.5rem] px-3 py-1 bg-zinc-600 text-zinc-300 rounded border border-zinc-500">
                   LOCKED
                 </div>
               )}

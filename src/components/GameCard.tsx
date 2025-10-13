@@ -109,7 +109,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
                 src={image}
                 alt={title}
                 className={`w-full h-full object-cover ${
-                  isComingSoon ? 'grayscale opacity-40' : ''
+                  isComingSoon ? 'grayscale opacity-70' : ''
                 }`}
               />
               {/* Scanlines */}
@@ -123,8 +123,8 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
               
               {/* Locked Overlay */}
               {isComingSoon && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/60">
-                  <div className="arcade-font text-zinc-500 text-xs sm:text-sm text-center px-4">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                  <div className="arcade-font text-zinc-400 text-xs sm:text-sm text-center px-4">
                     LOCKED
                   </div>
                 </div>
