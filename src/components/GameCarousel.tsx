@@ -124,18 +124,27 @@ export function GameCarousel({ games }: GameCarouselProps) {
     scrollToIndex(targetIndex, true);
   };
 
+  // Check for mobile landscape
   useEffect(() => {
-    // Check for mobile landscape
     const checkMobileLandscape = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
-      setIsMobileLandscape(width < 768 && height < width);
+      const isLandscape = width > height;
+      const isMobile = width < 768;
+      setIsMobileLandscape(isMobile && isLandscape);
     };
 
     checkMobileLandscape();
     window.addEventListener('resize', checkMobileLandscape);
     window.addEventListener('orientationchange', checkMobileLandscape);
 
+    return () => {
+      window.removeEventListener('resize', checkMobileLandscape);
+      window.removeEventListener('orientationchange', checkMobileLandscape);
+    };
+  }, []);
+
+  useEffect(() => {
     // Initialize to first item of middle set after a short delay
     const timer = setTimeout(() => {
       scrollToIndex(games.length, false);
@@ -147,11 +156,53 @@ export function GameCarousel({ games }: GameCarouselProps) {
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
       }
-      window.removeEventListener('resize', checkMobileLandscape);
-      window.removeEventListener('orientationchange', checkMobileLandscape);
     };
   }, [games.length, scrollToIndex]);
 
+  // Mobile landscape list format
+  if (isMobileLandscape) {
+    return (
+      <div className="w-full h-full flex flex-col justify-center px-4">
+        <div className="space-y-3">
+          {games.map((game, index) => (
+            <div key={index} className="flex items-center gap-4 p-3 bg-zinc-900/50 border border-zinc-700 rounded-lg backdrop-blur-sm">
+              <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+                <img 
+                  src={game.image}
+                  alt={game.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="arcade-font text-xs text-white truncate">
+                  {game.title}
+                </h3>
+                <p className="arcade-font text-[0.5rem] text-zinc-400">
+                  {game.status}
+                </p>
+              </div>
+              {game.link ? (
+                <a 
+                  href={game.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="arcade-font text-[0.5rem] px-3 py-1 bg-primary text-white rounded border border-primary hover:bg-primary/80 transition-colors"
+                >
+                  PLAY
+                </a>
+              ) : (
+                <div className="arcade-font text-[0.5rem] px-3 py-1 bg-zinc-700 text-zinc-400 rounded border border-zinc-600">
+                  LOCKED
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop carousel format
   return (
     <div className="relative w-full h-full flex flex-col">
       {/* Navigation Buttons - Desktop Only */}
@@ -184,12 +235,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
         }}
       >
         {/* Left spacer for proper centering */}
-        <div 
-          className="flex-shrink-0 w-[calc(50vw-37.5vw)] lg:w-[calc(50vw-200px)]" 
-          style={{
-            width: isMobileLandscape ? 'calc(50vw - 30vw)' : undefined
-          }}
-        />
+        <div className="flex-shrink-0 w-[calc(50vw-37.5vw)] lg:w-[calc(50vw-200px)]" />
         
         {infiniteGames.map((game, index) => {
           const actualIndex = getActualIndex(index);
@@ -202,9 +248,6 @@ export function GameCarousel({ games }: GameCarouselProps) {
                       ? 'w-[75vw] sm:w-[60vw] md:w-[50vw] lg:w-[400px] scale-100 opacity-100'
                       : 'w-[75vw] sm:w-[60vw] md:w-[50vw] lg:w-[400px] scale-75 opacity-40'
                   }`}
-                  style={{
-                    width: isMobileLandscape ? '60vw' : undefined
-                  }}
             >
               <GameCard
                 title={game.title}
@@ -218,12 +261,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
         })}
         
         {/* Right spacer for proper centering */}
-        <div 
-          className="flex-shrink-0 w-[calc(50vw-37.5vw)] lg:w-[calc(50vw-200px)]" 
-          style={{
-            width: isMobileLandscape ? 'calc(50vw - 30vw)' : undefined
-          }}
-        />
+        <div className="flex-shrink-0 w-[calc(50vw-37.5vw)] lg:w-[calc(50vw-200px)]" />
       </div>
 
       {/* Indicator Dots */}
