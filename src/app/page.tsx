@@ -31,51 +31,30 @@ export default function Home() {
   ];
   
   return (
-    <div className="min-h-screen bg-black">
+    <div className="h-screen bg-black flex flex-col overflow-hidden">
       {/* Arcade Floor Pattern */}
       <div className="fixed inset-0 opacity-5" style={{
         backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255, 255, 255, 0.03) 60px, rgba(255, 255, 255, 0.03) 61px),
                          repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255, 255, 255, 0.03) 60px, rgba(255, 255, 255, 0.03) 61px)`
       }} />
       
-      {/* Simple Navbar */}
-      <header className="relative border-b-2 border-zinc-800 bg-black/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 sm:py-6">
-          <div className="flex items-center">
-            <h1 className="arcade-title text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
+      {/* Minimal Header */}
+      <header className="relative border-b-2 border-zinc-800 bg-black/80 backdrop-blur-sm flex-shrink-0">
+        <div className="container mx-auto px-4 py-2">
+          <div className="flex items-center justify-center">
+            <h1 className="arcade-title text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
               THE BEACON HQ
             </h1>
           </div>
         </div>
       </header>
 
-      <main className="relative py-12 sm:py-16 md:py-20 lg:py-24">
-        {/* Game Carousel */}
-        <section className="w-full overflow-hidden">
+      {/* Full Height Main Content */}
+      <main className="flex-1 flex items-center justify-center overflow-hidden">
+        <section className="w-full h-full flex items-center justify-center">
           <GameCarousel games={games} />
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="relative border-t-2 border-zinc-800 mt-12 sm:mt-16 md:mt-20 lg:mt-28">
-        <div className="container mx-auto px-4 py-8 sm:py-10 md:py-12">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <div className="flex gap-1.5 sm:gap-2">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-lg shadow-primary/50" />
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-lg shadow-accent/50" style={{ animationDelay: '0.3s' }} />
-              <div className="w-2 h-2 rounded-full bg-secondary animate-pulse shadow-lg shadow-secondary/50" style={{ animationDelay: '0.6s' }} />
-            </div>
-            <p className="arcade-font text-[0.5rem] sm:text-[0.6rem] text-zinc-500">
-              © {currentYear} THE BEACON HQ
-            </p>
-            <div className="flex gap-1.5 sm:gap-2">
-              <div className="w-2 h-2 rounded-full bg-secondary animate-pulse shadow-lg shadow-secondary/50" />
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-lg shadow-accent/50" style={{ animationDelay: '0.3s' }} />
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-lg shadow-primary/50" style={{ animationDelay: '0.6s' }} />
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

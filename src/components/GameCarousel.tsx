@@ -139,7 +139,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
   }, [games.length, scrollToIndex]);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full h-full flex flex-col">
       {/* Navigation Buttons - Desktop Only */}
       <button
         onClick={handlePrevious}
@@ -161,7 +161,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
       <div
         ref={scrollRef}
         onScroll={updateCenterIndex}
-        className="flex gap-4 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8"
+        className="flex-1 flex gap-4 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide items-center"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
@@ -200,7 +200,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
       </div>
 
       {/* Indicator Dots */}
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="flex justify-center gap-2 py-4 flex-shrink-0">
         {games.map((_, index) => {
           const isActive = getActualIndex(centerIndex) === index;
           return (
