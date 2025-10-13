@@ -50,8 +50,8 @@ export default function Home() {
       </header>
 
       {/* Full Height Main Content */}
-      <main className="flex-1 flex items-center justify-center overflow-hidden min-h-0">
-        <section className="w-full h-full flex items-center justify-center min-h-0">
+      <main className="flex-1 flex items-center justify-center overflow-hidden">
+        <section className="w-full h-full flex items-center justify-center">
           <GameCarousel games={games} />
         </section>
       </main>

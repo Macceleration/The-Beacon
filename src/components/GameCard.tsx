@@ -15,11 +15,11 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
   const isComingSoon = status === "LOCKED";
   
   const cardContent = (
-    <div className="group relative h-full max-h-full">
+    <div className="group relative">
       {/* Arcade Cabinet Body */}
       <div className={`relative bg-black border-8 ${
         isComingSoon ? 'border-zinc-700' : 'border-primary'
-      } shadow-2xl transition-all duration-300 hover:scale-[1.02] h-full max-h-full flex flex-col`}
+      } shadow-2xl transition-all duration-300 hover:scale-[1.02]`}
       style={{
         background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%)',
       }}>
@@ -43,7 +43,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
           isComingSoon 
             ? 'bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700' 
             : 'bg-gradient-to-r from-primary via-accent to-secondary'
-        } p-2 border-b-2 ${isComingSoon ? 'border-zinc-700' : 'border-primary'}`}>
+        } p-4 border-b-4 ${isComingSoon ? 'border-zinc-700' : 'border-primary'}`}>
           {/* Marquee lights */}
           <div className="absolute top-0 left-0 right-0 flex justify-around py-1">
             {[...Array(8)].map((_, i) => (
@@ -61,7 +61,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
           
           <h3 className={`arcade-title text-center ${
             isComingSoon ? 'text-zinc-500' : 'text-white'
-          } text-[0.6rem] sm:text-xs ${
+          } text-xs sm:text-sm ${
             isComingSoon ? '' : 'drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]'
           }`}>
             {title}
@@ -84,7 +84,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         </div>
 
         {/* Status Badge */}
-        <div className="absolute top-12 right-3 z-20">
+        <div className="absolute top-16 right-4 z-20">
           <Badge 
             variant={status === "Live Now" ? "default" : "secondary"} 
             className={`arcade-font text-[0.5rem] ${
@@ -98,13 +98,13 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         </div>
 
         {/* Screen Area */}
-        <div className="p-3 bg-black flex-1 min-h-0">
-          <div className="relative border-8 border-zinc-900 shadow-2xl shadow-black/50 overflow-hidden h-full"
+        <div className="p-6 bg-black">
+          <div className="relative border-8 border-zinc-900 shadow-2xl shadow-black/50 overflow-hidden"
             style={{
               boxShadow: 'inset 0 0 30px rgba(0,0,0,0.8)',
             }}>
             {/* CRT Screen */}
-            <div className="relative aspect-[4/3] bg-black h-full">
+            <div className="relative aspect-[4/3] bg-black">
               <img 
                 src={image}
                 alt={title}
@@ -134,14 +134,14 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         </div>
 
         {/* Control Panel */}
-        <div className="relative bg-gradient-to-b from-zinc-800 to-black border-t-2 border-zinc-700 p-2 flex-shrink-0">
+        <div className="relative bg-gradient-to-b from-zinc-800 to-black border-t-4 border-zinc-700 p-4">
           {/* Control Panel Angle */}
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-700/20 to-transparent pointer-events-none" />
           
-          <div className="flex items-center justify-center gap-2 relative z-10">
+          <div className="flex items-center justify-center gap-4 relative z-10">
             {/* Arcade Buttons */}
-            <div className="flex gap-1">
-              <div className={`relative w-6 h-6 rounded-full ${
+            <div className="flex gap-2">
+              <div className={`relative w-8 h-8 rounded-full ${
                 isComingSoon ? 'bg-zinc-700' : 'bg-primary'
               } shadow-lg border-2 border-zinc-900 ${
                 isComingSoon ? '' : 'transition-all duration-200 hover:scale-110'
@@ -155,7 +155,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
                   <div className="absolute inset-2 bg-gradient-to-b from-white/40 to-transparent rounded-full" />
                 )}
               </div>
-              <div className={`relative w-6 h-6 rounded-full ${
+              <div className={`relative w-8 h-8 rounded-full ${
                 isComingSoon ? 'bg-zinc-700' : 'bg-accent'
               } shadow-lg border-2 border-zinc-900`}
                 style={{
@@ -165,7 +165,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
                   <div className="absolute inset-2 bg-gradient-to-b from-white/40 to-transparent rounded-full" />
                 )}
               </div>
-              <div className={`relative w-6 h-6 rounded-full ${
+              <div className={`relative w-8 h-8 rounded-full ${
                 isComingSoon ? 'bg-zinc-700' : 'bg-secondary'
               } shadow-lg border-2 border-zinc-900`}
                 style={{
@@ -179,7 +179,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
             
             {/* Start Button / Coin Slot */}
             {link ? (
-              <div className="arcade-font text-[0.4rem] flex items-center gap-1 px-2 py-1 bg-primary border-2 border-primary shadow-lg transition-all duration-200 group-hover:scale-105"
+              <div className="arcade-font text-[0.5rem] flex items-center gap-1 px-3 py-1 bg-primary border-2 border-primary shadow-lg transition-all duration-200 group-hover:scale-105"
                 style={{
                   boxShadow: 'inset 0 -3px 5px rgba(0,0,0,0.4)',
                 }}>
@@ -187,7 +187,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
                 <span>START</span>
               </div>
             ) : (
-              <div className="arcade-font text-[0.4rem] flex items-center gap-1 px-2 py-1 bg-zinc-800 border-2 border-zinc-700 shadow-lg opacity-50"
+              <div className="arcade-font text-[0.5rem] flex items-center gap-1 px-3 py-1 bg-zinc-800 border-2 border-zinc-700 shadow-lg opacity-50"
                 style={{
                   boxShadow: 'inset 0 -3px 5px rgba(0,0,0,0.4)',
                 }}>
@@ -198,13 +198,13 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
           </div>
 
           {/* Coin Slot Detail */}
-          <div className="mt-1 flex justify-center">
-            <div className="w-10 h-2 bg-black border-2 border-zinc-700 rounded-sm shadow-inner" />
+          <div className="mt-2 flex justify-center">
+            <div className="w-12 h-3 bg-black border-2 border-zinc-700 rounded-sm shadow-inner" />
           </div>
         </div>
 
         {/* Base */}
-        <div className="h-2 bg-gradient-to-b from-zinc-900 to-black border-t border-zinc-800 flex-shrink-0" />
+        <div className="h-3 bg-gradient-to-b from-zinc-900 to-black border-t border-zinc-800" />
       </div>
     </div>
   );

@@ -17,6 +17,7 @@ interface GameCarouselProps {
 
 export function GameCarousel({ games }: GameCarouselProps) {
   const [centerIndex, setCenterIndex] = useState(games.length); // Start at first item of middle set
+  const [isMobileLandscape, setIsMobileLandscape] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const isScrollingRef = useRef(false);
@@ -124,6 +125,17 @@ export function GameCarousel({ games }: GameCarouselProps) {
   };
 
   useEffect(() => {
+    // Check for mobile landscape
+    const checkMobileLandscape = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      setIsMobileLandscape(width < 768 && height < width);
+    };
+
+    checkMobileLandscape();
+    window.addEventListener('resize', checkMobileLandscape);
+    window.addEventListener('orientationchange', checkMobileLandscape);
+
     // Initialize to first item of middle set after a short delay
     const timer = setTimeout(() => {
       scrollToIndex(games.length, false);
@@ -135,11 +147,13 @@ export function GameCarousel({ games }: GameCarouselProps) {
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
       }
+      window.removeEventListener('resize', checkMobileLandscape);
+      window.removeEventListener('orientationchange', checkMobileLandscape);
     };
   }, [games.length, scrollToIndex]);
 
   return (
-    <div className="relative w-full h-full flex flex-col min-h-0 max-h-full">
+    <div className="relative w-full h-full flex flex-col">
       {/* Navigation Buttons - Desktop Only */}
       <button
         onClick={handlePrevious}
@@ -161,7 +175,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
       <div
         ref={scrollRef}
         onScroll={updateCenterIndex}
-        className="flex-1 flex gap-4 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide items-center min-h-0"
+        className="flex-1 flex gap-4 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide items-center"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
@@ -170,7 +184,12 @@ export function GameCarousel({ games }: GameCarouselProps) {
         }}
       >
         {/* Left spacer for proper centering */}
-        <div className="flex-shrink-0 w-[calc(50vw-25vw)] lg:w-[calc(50vw-175px)]" />
+        <div 
+          className="flex-shrink-0 w-[calc(50vw-37.5vw)] lg:w-[calc(50vw-200px)]" 
+          style={{
+            width: isMobileLandscape ? 'calc(50vw - 30vw)' : undefined
+          }}
+        />
         
         {infiniteGames.map((game, index) => {
           const actualIndex = getActualIndex(index);
@@ -180,9 +199,12 @@ export function GameCarousel({ games }: GameCarouselProps) {
               ref={(el) => { itemRefs.current[index] = el; }}
                   className={`flex-shrink-0 snap-center transition-all duration-500 ${
                     centerIndex === index
-                      ? 'w-[50vw] sm:w-[40vw] md:w-[35vw] lg:w-[350px] scale-100 opacity-100'
-                      : 'w-[50vw] sm:w-[40vw] md:w-[35vw] lg:w-[350px] scale-75 opacity-40'
+                      ? 'w-[75vw] sm:w-[60vw] md:w-[50vw] lg:w-[400px] scale-100 opacity-100'
+                      : 'w-[75vw] sm:w-[60vw] md:w-[50vw] lg:w-[400px] scale-75 opacity-40'
                   }`}
+                  style={{
+                    width: isMobileLandscape ? '60vw' : undefined
+                  }}
             >
               <GameCard
                 title={game.title}
@@ -196,7 +218,12 @@ export function GameCarousel({ games }: GameCarouselProps) {
         })}
         
         {/* Right spacer for proper centering */}
-        <div className="flex-shrink-0 w-[calc(50vw-25vw)] lg:w-[calc(50vw-175px)]" />
+        <div 
+          className="flex-shrink-0 w-[calc(50vw-37.5vw)] lg:w-[calc(50vw-200px)]" 
+          style={{
+            width: isMobileLandscape ? 'calc(50vw - 30vw)' : undefined
+          }}
+        />
       </div>
 
       {/* Indicator Dots */}
