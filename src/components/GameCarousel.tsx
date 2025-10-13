@@ -139,7 +139,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
   }, [games.length, scrollToIndex]);
 
   return (
-    <div className="relative w-full h-full flex flex-col">
+    <div className="relative w-full h-full flex flex-col min-h-0 max-h-full">
       {/* Navigation Buttons - Desktop Only */}
       <button
         onClick={handlePrevious}
@@ -161,7 +161,7 @@ export function GameCarousel({ games }: GameCarouselProps) {
       <div
         ref={scrollRef}
         onScroll={updateCenterIndex}
-        className="flex-1 flex gap-4 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide items-center"
+        className="flex-1 flex gap-4 lg:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide items-center min-h-0"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',

@@ -15,11 +15,11 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
   const isComingSoon = status === "LOCKED";
   
   const cardContent = (
-    <div className="group relative">
+    <div className="group relative h-full max-h-full">
       {/* Arcade Cabinet Body */}
       <div className={`relative bg-black border-8 ${
         isComingSoon ? 'border-zinc-700' : 'border-primary'
-      } shadow-2xl transition-all duration-300 hover:scale-[1.02]`}
+      } shadow-2xl transition-all duration-300 hover:scale-[1.02] h-full max-h-full flex flex-col`}
       style={{
         background: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%)',
       }}>
@@ -98,13 +98,13 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         </div>
 
         {/* Screen Area */}
-        <div className="p-4 bg-black">
-          <div className="relative border-8 border-zinc-900 shadow-2xl shadow-black/50 overflow-hidden"
+        <div className="p-4 bg-black flex-1 min-h-0">
+          <div className="relative border-8 border-zinc-900 shadow-2xl shadow-black/50 overflow-hidden h-full"
             style={{
               boxShadow: 'inset 0 0 30px rgba(0,0,0,0.8)',
             }}>
             {/* CRT Screen */}
-            <div className="relative aspect-[4/3] bg-black">
+            <div className="relative aspect-[4/3] bg-black h-full">
               <img 
                 src={image}
                 alt={title}
@@ -134,7 +134,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         </div>
 
         {/* Control Panel */}
-        <div className="relative bg-gradient-to-b from-zinc-800 to-black border-t-4 border-zinc-700 p-3">
+        <div className="relative bg-gradient-to-b from-zinc-800 to-black border-t-4 border-zinc-700 p-3 flex-shrink-0">
           {/* Control Panel Angle */}
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-700/20 to-transparent pointer-events-none" />
           
@@ -204,7 +204,7 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         </div>
 
         {/* Base */}
-        <div className="h-3 bg-gradient-to-b from-zinc-900 to-black border-t border-zinc-800" />
+        <div className="h-3 bg-gradient-to-b from-zinc-900 to-black border-t border-zinc-800 flex-shrink-0" />
       </div>
     </div>
   );
