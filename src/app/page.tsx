@@ -41,10 +41,13 @@ export default function Home() {
       {/* Minimal Header */}
       <header className="relative border-b-2 border-zinc-800 bg-black/80 backdrop-blur-sm flex-shrink-0">
         <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center">
             <h1 className="arcade-title text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">
               THE BEACON HQ
             </h1>
+            <p className="arcade-font text-white text-xs sm:text-sm mt-1 opacity-80">
+              THE NEXT-GEN ARCADE
+            </p>
           </div>
         </div>
       </header>
@@ -59,7 +62,7 @@ export default function Home() {
       {/* Minimal Footer */}
       <footer className="relative border-t-2 border-zinc-800 bg-black/80 backdrop-blur-sm flex-shrink-0">
         <div className="container mx-auto px-4 py-2">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2">
             <div className="flex gap-1">
               <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-lg shadow-primary/50" />
               <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-lg shadow-accent/50" style={{ animationDelay: '0.3s' }} />

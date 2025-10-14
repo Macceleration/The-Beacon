@@ -159,42 +159,44 @@ export function GameCarousel({ games }: GameCarouselProps) {
     };
   }, [games.length, scrollToIndex]);
 
-  // Mobile landscape list format
+  // Mobile landscape grid format
   if (isMobileLandscape) {
     return (
       <div className="w-full h-full flex flex-col justify-center px-4">
-        <div className="space-y-3">
+        <div className="grid grid-cols-2 gap-3">
           {games.map((game, index) => (
-            <div key={index} className="flex items-center gap-4 p-3 bg-zinc-900/50 border border-zinc-700 rounded-lg backdrop-blur-sm">
-              <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+            <div key={index} className="flex flex-col items-center p-3 bg-zinc-900/50 border border-zinc-700 rounded-lg backdrop-blur-sm">
+              <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 mb-2">
                 <img 
                   src={game.image}
                   alt={game.title}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover ${
+                    game.status === "LOCKED" ? 'grayscale opacity-70' : ''
+                  }`}
                 />
               </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="arcade-font text-xs text-white truncate">
+              <div className="text-center">
+                <h3 className="arcade-font text-[0.5rem] text-white truncate mb-1">
                   {game.title}
                 </h3>
-                <p className="arcade-font text-[0.5rem] text-zinc-400">
+                <p className="arcade-font text-[0.4rem] text-zinc-400 mb-2">
                   {game.status}
                 </p>
+                {game.link ? (
+                  <a 
+                    href={game.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="arcade-font text-[0.4rem] px-2 py-1 bg-primary text-white rounded border border-primary hover:bg-primary/80 transition-colors"
+                  >
+                    PLAY
+                  </a>
+                ) : (
+                  <div className="arcade-font text-[0.4rem] px-2 py-1 bg-zinc-600 text-zinc-300 rounded border border-zinc-500">
+                    LOCKED
+                  </div>
+                )}
               </div>
-              {game.link ? (
-                <a 
-                  href={game.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="arcade-font text-[0.5rem] px-3 py-1 bg-primary text-white rounded border border-primary hover:bg-primary/80 transition-colors"
-                >
-                  PLAY
-                </a>
-              ) : (
-                <div className="arcade-font text-[0.5rem] px-3 py-1 bg-zinc-600 text-zinc-300 rounded border border-zinc-500">
-                  LOCKED
-                </div>
-              )}
             </div>
           ))}
         </div>

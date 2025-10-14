@@ -4,9 +4,6 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'The Beacon',
   description: 'Welcome to The Beacon',
-  icons: {
-    icon: '/favicon.svg',
-  },
 }
 
 export default function RootLayout({

@@ -87,10 +87,10 @@ export function GameCard({ title, status, image, link, featured = false }: GameC
         <div className="absolute top-16 right-4 z-20">
           <Badge 
             variant={status === "Live Now" ? "default" : "secondary"} 
-            className={`arcade-font text-[0.5rem] ${
+            className={`arcade-font text-[0.5rem] transition-all duration-300 ${
               status === "Live Now" 
-                ? 'bg-accent text-accent-foreground border-2 border-accent shadow-lg shadow-accent/50 animate-pulse' 
-                : 'bg-zinc-800 text-zinc-400 border-2 border-zinc-700'
+                ? 'bg-accent text-accent-foreground border-2 border-accent shadow-lg shadow-accent/50 animate-pulse hover:bg-secondary hover:border-secondary hover:shadow-secondary/50' 
+                : 'bg-zinc-800 text-zinc-400 border-2 border-zinc-700 hover:bg-red-600 hover:text-white hover:border-red-500 hover:shadow-red-500/50'
             }`}
           >
             {status}
