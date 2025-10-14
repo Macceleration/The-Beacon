@@ -3,18 +3,18 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'The Beacon HQ',
-  description: 'Experience the future of gaming at THE BEACON HQ. Play live games like BORDERLAND and discover what\'s coming next in our arcade universe.',
+  description: 'Play live games like BORDERLAND and discover what\'s next in our arcade universe.',
   openGraph: {
-    title: 'THE BEACON HQ - The Next-Gen Arcade',
-    description: 'Experience the future of gaming at THE BEACON HQ. Play live games like BORDERLAND and discover what\'s coming next in our arcade universe.',
+    title: 'The Beacon HQ - The Next-Gen Arcade',
+    description: 'Play live games like BORDERLAND and discover what\'s next in our arcade universe.',
     url: 'https://thebeaconhq.com',
-    siteName: 'THE BEACON HQ',
+    siteName: 'The Beacon HQ',
     images: [
       {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'THE BEACON HQ - The Next-Gen Arcade',
+        alt: 'The Beacon HQ - The Next-Gen Arcade',
       },
     ],
     locale: 'en_US',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'THE BEACON HQ - The Next-Gen Arcade',
-    description: 'Experience the future of gaming at THE BEACON HQ. Play live games like BORDERLAND and discover what\'s coming next in our arcade universe.',
+    title: 'The Beacon HQ - The Next-Gen Arcade',
+    description: 'Play live games like BORDERLAND and discover what\'s next in our arcade universe.',
     images: ['/images/og-image.png'],
   },
 }
