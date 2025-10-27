@@ -57,3 +57,34 @@ To create a production build:
 ```bash
 yarn build
 ```
+
+## API
+
+The Beacon provides a simple API endpoint to get information about currently live games:
+
+### Live Games Endpoint
+
+**GET** `/api/live-games/`
+
+Returns a JSON response with currently live games and their links.
+
+**Example Response:**
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "title": "BORDERLAND",
+      "status": "Live Now",
+      "link": "https://borderland.thebeaconhq.com"
+    }
+  ]
+}
+```
+
+**Usage:**
+```bash
+curl http://localhost:3000/api/live-games/
+```
+
+This endpoint can be used by external applications to discover and link to currently active games.
