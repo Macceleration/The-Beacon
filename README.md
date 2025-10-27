@@ -1,6 +1,6 @@
 # 🕹️ The Beacon
 
-[Tweet Tweet](https://x.com/the_beacon_hq)
+[Tweet](https://x.com/the_beacon_hq)
 
 ---
 
