@@ -1,5 +1,7 @@
 # 🕹️ The Beacon
 
+[Tweet Tweet](https://x.com/the_beacon_hq)
+
 ---
 
 ## 🌟 Overview  
