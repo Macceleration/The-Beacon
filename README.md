@@ -4,7 +4,7 @@
 
 ## 🌟 Overview  
 
-**The Beacon** is a platform for **Hyperlocal Live Games** — interactive, real-world gaming experiences where your city, neighborhood, or even your favorite hangout becomes the arena.  
+**The Beacon** is a platform for **Hyperlocal Live Games** like _[Borderland](https://github.com/ianherdegen/Beacon-Borderland)_ — interactive, real-world gaming experiences where your city, neighborhood, or even your favorite hangout becomes the arena.  
 
 We’re redefining what it means to “go out and play.” Instead of screens separating players, **The Beacon** connects people face-to-face through challenges, events, and real-time adventures that blend **digital gameplay with physical spaces.**
 
