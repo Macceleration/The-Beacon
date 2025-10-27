@@ -46,7 +46,7 @@ export default function Home() {
               THE BEACON HQ
             </h1>
             <p className="arcade-font text-white text-xs sm:text-sm mt-1 opacity-80">
-              THE NEXT-GEN ARCADE
+              Hyperlocal Live Gaming
             </p>
           </div>
         </div>
