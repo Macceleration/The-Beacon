@@ -71,6 +71,14 @@ export default function Home() {
             <p className="arcade-font text-[0.4rem] sm:text-[0.5rem] text-zinc-500">
               © {currentYear} THE BEACON HQ
             </p>
+            <a 
+              href="https://github.com/ianherdegen/The-Beacon" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[0.4rem] sm:text-[0.5rem] hover:opacity-80 transition-opacity duration-200"
+            >
+              🔧
+            </a>
             <div className="flex gap-1">
               <div className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse shadow-lg shadow-secondary/50" />
               <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-lg shadow-accent/50" style={{ animationDelay: '0.3s' }} />
