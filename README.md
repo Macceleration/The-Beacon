@@ -1,6 +1,8 @@
 # 🕹️ The Beacon
 ### **Hyperlocal Live Gaming**
 
+<img width="1201" height="759" alt="Beacon" src="https://github.com/user-attachments/assets/bcf27ff3-4c4c-46d2-b9f2-0569c4d80102" />
+
 ---
 
 ## 🌟 Overview  
