@@ -1,6 +1,33 @@
-# The Beacon
+# 🕹️ The Beacon
+### **Hyperlocal Live Gaming**
 
-A simple webapp that displays "The Beacon".
+---
+
+## 🌟 Overview  
+
+**The Beacon** is a platform for **Hyperlocal Live Games** — interactive, real-world gaming experiences where your city, neighborhood, or even your favorite hangout becomes the arena.  
+
+We’re redefining what it means to “go out and play.” Instead of screens separating players, **The Beacon** connects people face-to-face through challenges, events, and real-time adventures that blend **digital gameplay with physical spaces.**
+
+---
+
+## 🎯 What is "Hyperlocal Live Gaming"?  
+
+**Hyperlocal Live Gaming** means games that:  
+
+- 🌍 Take place in **real locations** — parks, cafés, rooftops, and public squares.  
+- ⚡ Happen **live**, syncing players and events in real time.  
+- 👥 Are **community-driven**, connecting players nearby through shared experiences.  
+
+Think of it as the intersection between **gaming, events, and urban exploration** — where the **real world is your arena.**
+
+---
+
+## 🚀 The Mission  
+
+- To transform everyday places into playgrounds.  
+- To bring back human connection through play.  
+- To make gaming local, live, and alive.  
 
 ## Getting Started
 
@@ -16,11 +43,11 @@ Then, run the development server:
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your locally hosted environment with your browser to see the result.
 
 ## Deployment
 
-This project is configured for deployment on Vercel. Simply push to the main branch and Vercel will automatically deploy.
+This project is configured for deployment on Vercel.
 
 ## Build
 
@@ -29,10 +56,3 @@ To create a production build:
 ```bash
 yarn build
 ```
-
-## Available Scripts
-
-- `yarn dev` - Start development server
-- `yarn build` - Build for production
-- `yarn start` - Start production server
-- `yarn lint` - Run ESLint
