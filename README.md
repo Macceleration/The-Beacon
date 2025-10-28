@@ -90,3 +90,5 @@ curl http://localhost:3000/api/live-games/
 ```
 
 This endpoint can be used by external applications to discover and link to currently active games.
+
+Salud
